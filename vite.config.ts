@@ -18,8 +18,8 @@ export default defineConfig({
       injectRegister: false,
       includeAssets: ['favicon.ico', 'apple-touch-icon-180x180.png', 'icon.svg'],
       manifest: {
-        name: 'Stay Focus',
-        short_name: 'Stay Focus',
+        name: 'Weekleaf',
+        short_name: 'Weekleaf',
         description: 'פרויקטים, משימות, ספרינטים ושגרה. הכול במכשיר.',
         lang: 'he',
         dir: 'rtl',

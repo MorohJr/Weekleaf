@@ -12,7 +12,7 @@ import { addAgenda, addMilestone, createPerson, deletePerson } from './people';
 import { addOnboardingTask, finishOnboarding, restartOnboarding, startChallenge } from './onboarding';
 import { wipeAll } from './backup';
 import Dexie from 'dexie';
-import { SCHEMA_V4, SCHEMA_V5, StayFocusDB } from '../db/db';
+import { SCHEMA_V4, SCHEMA_V5, WeekleafDB } from '../db/db';
 import { updateGoal, updateProject } from './planning';
 import { markYearSeen, saveYearAnswers } from './yearReview';
 import { deleteEvent, detachOccurrence, meetingNoteFor, restoreEvent, saveEvent, scheduleTask, skipOccurrence, unschedule } from './events';
@@ -362,7 +362,7 @@ describe('onboarding (R-ONB)', () => {
       await v4.table('settings').add({ id: SETTINGS_ID, userName: 'x', routines: {}, seqCounter: 0, updatedAt: '2026-10-01T00:00:00.000Z' });
       if (withData) await v4.table('notes').add({ id: 'n1', title: 'n' });
       v4.close();
-      const v5 = new StayFocusDB(name);
+      const v5 = new WeekleafDB(name);
       await v5.open();
       expect((await v5.settings.get(SETTINGS_ID))!.onboardedAt).toBe(withData ? '2026-10-01T00:00:00.000Z' : undefined);
       v5.close();
@@ -411,7 +411,7 @@ describe('year review data (1.9)', () => {
     await v5.table('projects').add({ id: 'x', status: 'done', updatedAt: '2026-03-01T00:00:00.000Z' });
     await v5.table('goals').add({ id: 'g', status: 'achieved', updatedAt: '2026-04-01T00:00:00.000Z' });
     v5.close();
-    const v6 = new StayFocusDB(name);
+    const v6 = new WeekleafDB(name);
     await v6.open();
     expect((await v6.projects.get('x'))!.doneAt).toBe('2026-03-01T00:00:00.000Z');
     expect((await v6.goals.get('g'))!.achievedAt).toBe('2026-04-01T00:00:00.000Z');

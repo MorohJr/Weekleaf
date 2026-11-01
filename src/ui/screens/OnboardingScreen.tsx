@@ -346,7 +346,7 @@ function Slides({ onStart, onSkip }: { onStart: () => void; onSkip: () => void }
         {weekNumber(todayISO())}
       </span>
       <div className="onb-top">
-        <span className="onb-brand">Stay Focus</span>
+        <span className="onb-brand">Weekleaf</span>
         <button type="button" className="onb-skip" onClick={onSkip}>
           דלג על הכול
         </button>

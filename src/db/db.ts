@@ -60,7 +60,7 @@ export type TableName = keyof typeof SCHEMA_V7;
 export const TABLE_NAMES = Object.keys(SCHEMA_V7) as TableName[];
 export const CURRENT_SCHEMA_VERSION = 7;
 
-export class StayFocusDB extends Dexie {
+export class WeekleafDB extends Dexie {
   tasks!: EntityTable<D.Task, 'id'>;
   projects!: EntityTable<D.Project, 'id'>;
   sprints!: EntityTable<D.Sprint, 'id'>;
@@ -128,4 +128,4 @@ export function isWorkAreaByDefault(a: { id: string; name: string }): boolean {
   return a.id === 'area-work' || a.name.trim() === 'עבודה';
 }
 
-export const db = new StayFocusDB();
+export const db = new WeekleafDB();

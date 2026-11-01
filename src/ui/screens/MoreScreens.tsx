@@ -61,7 +61,7 @@ export function MoreScreen() {
         {row('/settings', 'settings', 'הגדרות ומצב הדגמה')}
       </section>
       <p className="muted small" style={{ textAlign: 'center' }}>
-        Stay Focus · גרסה {__APP_VERSION__} · הכול נשמר במכשיר הזה בלבד
+        Weekleaf · גרסה {__APP_VERSION__} · הכול נשמר במכשיר הזה בלבד
       </p>
     </div>
   );
@@ -151,7 +151,7 @@ export function BackupScreen() {
       setParsed(await parseBackup(await file.text()));
     } catch (e) {
       const code = e instanceof BackupError ? e.code : '';
-      setError(code === 'newer_version' ? 'הגיבוי נוצר בגרסה חדשה יותר של האפליקציה. עדכן את האפליקציה במכשיר הזה ונסה שוב.' : code === 'not_a_backup' ? 'זה לא קובץ גיבוי של Stay Focus.' : 'הקובץ פגום ולא ניתן לשחזר ממנו.');
+      setError(code === 'newer_version' ? 'הגיבוי נוצר בגרסה חדשה יותר של האפליקציה. עדכן את האפליקציה במכשיר הזה ונסה שוב.' : code === 'not_a_backup' ? 'זה לא קובץ גיבוי של Weekleaf.' : 'הקובץ פגום ולא ניתן לשחזר ממנו.');
     }
   };
 

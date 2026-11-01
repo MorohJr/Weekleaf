@@ -224,7 +224,7 @@ function railTab(top: string): string {
 function DesktopChrome({ active, at, onCapture }: { active: string; at: string; onCapture: () => void }) {
   return (
     <aside className="rail" aria-label="ניווט">
-      <span className="rbrand" title="Stay Focus" aria-hidden="true">
+      <span className="rbrand" title="Weekleaf" aria-hidden="true">
         <b />
       </span>
       <button type="button" className="add" aria-label="רישום מהיר" data-tip="רישום מהיר" onClick={onCapture}>

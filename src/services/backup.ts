@@ -85,9 +85,9 @@ export async function exportBackup(): Promise<string> {
   return JSON.stringify({ format: BACKUP_FORMAT, schemaVersion: CURRENT_SCHEMA_VERSION, exportedAt: nowIso(), data });
 }
 
-/** stay-focus-backup-2026-09-30.json */
+/** weekleaf-backup-2026-09-30.json */
 export function backupFileName(isoDate: string): string {
-  return `stay-focus-backup-${isoDate}.json`;
+  return `weekleaf-backup-${isoDate}.json`;
 }
 
 export async function markBackupDone(): Promise<void> {
